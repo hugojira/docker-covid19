@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Contenido
 Este repositorio contiene un Dockerfile que crea una imagen de docker basada en Ubuntu 20.04 LTS que a su vez contiene un script bash para descargar y limpiar datos de covid-19 de la Secretaría de Salud Federal de México, el cual estará al crear un contenedor de dicha imagen. Los archivos necesarios para crear la imagen se encuentran en la carpeta [docker-csvkit](/docker-csvkit).
 
@@ -58,7 +57,3 @@ A continuación, un ejemplo del script corriendo en el contenedor creado con el 
 ![image](/docs/Docker-csvkit-data.png)
 
 En este caso partícular con un nombre de imagen ```docker-covid-prueba``` y nombre del contenedor ```docker-csvkit``` con el volumen montado en el directorio local ```/Users/hugo/Documents```.
-=======
-# docker-csvkit-covid19
-Repositorio para alojar el Dockerfile que construye una imagen con las paqueterías necesarias para descargar y procesar datos de covid19 de la Secretaría de Salud Federal mediante un script .sh.
->>>>>>> e2e6b8bb8d92f097563940afd5d0552075314e23
