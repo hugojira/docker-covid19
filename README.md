@@ -62,10 +62,6 @@ bash descargar-datos.sh
 
 El script irá informando en la terminal el procesamiento que se vaya haciendo paso por paso, al terminar indicará que los datos resultantes se guardaron en el archivo ```tabaq-obesidad-covid19.csv``` en el directorio ```/root/data```, por lo que ya podrán extraerse del directorio local en donde se montó el volumen. Los datos ya estarán listos para hacer análisis en un lenguaje de programación especializado como R o Python.
 
-El archivo ```tabaq-obesidad-covid19.csv``` tiene la siguiente estructura en sus columnas
-
-![image](/docs/dataset.png)
-
 ## Ejemplo
 A continuación, un ejemplo del script corriendo en el contenedor creado con el Dockerfile
 
