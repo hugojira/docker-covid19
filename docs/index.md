@@ -56,7 +56,7 @@ docker start -ai <nombre-contenedor>
 
 Una vez dentro del contenedor se verá lo siguiente
 
-![image](/Docker-container-files.png)
+![image](Docker-container-files.png)
 
 Para descargar los datos y procesarlos, ejecute el script ```descargar-datos.sh``` con
 
@@ -69,6 +69,6 @@ El script irá informando en la terminal el procesamiento que se vaya haciendo p
 ## Ejemplo
 A continuación, un ejemplo del script corriendo en el contenedor creado con el Dockerfile
 
-![image](/Docker-csvkit-data.png)
+![image](Docker-csvkit-data.png)
 
 En este caso partícular con un nombre de imagen ```docker-covid-prueba``` y nombre del contenedor ```docker-csvkit``` con el volumen montado en el directorio local ```/Users/hugo/Documents```.
