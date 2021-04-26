@@ -46,7 +46,11 @@ Para poder extraer los datos que se filtrarán con el contenedor, es necesario m
 docker run --rm -it -v <directorio-local>:/root/data --name <nombre-contenedor> <nombre-imagen>
 ```
 
-Se recomienda ampliamente siempre crear el contenedor con ```--rm``` para que se elmine al terminar y no ir acumulando contenedores cada vez que desee procesar los datos. También se debe correr de manera interactiva con ```-it``` pues se necesitará la terminal para correr el script que manipulará los datos.
+Se recomienda ampliamente siempre crear el contenedor con ```--rm``` para que se elmine al terminar y no ir acumulando contenedores cada vez que desee procesar los datos. También se debe correr de manera interactiva con ```-it``` pues se necesitará la terminal para correr el script que manipulará los datos. O bien, puede crearse el contenedor sin ```-rm```, y si quiere acceder de nuevo a el usar
+
+```bash
+docker start -ai <nombre-contenedor>
+```
 
 ## Ejecutar el script de bash
 
@@ -69,4 +73,3 @@ A continuación, un ejemplo del script corriendo en el contenedor creado con el 
 
 En este caso partícular con un nombre de imagen ```docker-covid-prueba``` y nombre del contenedor ```docker-csvkit``` con el volumen montado en el directorio local ```/Users/hugo/Documents```.
 
-El conjunto de datos 
