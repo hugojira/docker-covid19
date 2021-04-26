@@ -9,7 +9,7 @@ unzip *.zip
 
 # Se quitan las comorbilidades a excepcion de obesidad y tabaquismo
 echo "Removiendo casos con comorbilidades, excepto obesidad y tabaquismo..."
-csvgrep -c DIABETES,EPOC,ASMA,INMUSUPR,HIPERTENSION,OTRA_COM,CARDIOVASCULAR,RENAL_CRONICA -m "2" *COVID19MEXICO.csv > tabaq_obesidad.csv
+csvgrep -c DIABETES,EPOC,ASMA,INMUSUPR,HIPERTENSION,OTRA_COM,CARDIOVASCULAR,RENAL_CRONICA -m "2" *.csv > tabaq_obesidad.csv
 
 # Seleccionamos las variables para el analisis
 echo "Extrayendo columnas que se usaran en este analisis..."

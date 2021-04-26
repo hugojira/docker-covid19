@@ -29,6 +29,14 @@ docker build -t <nombre-imagen>:<tag> .
 ```
 donde ```<nombre-imagen>``` y ```<tag>``` son el nombre y etiqueta que le quiera dar a la imagen, respectivamente.
 
+En este caso, nuestro Dockerile creará la imagen de Ubuntu 20.04 con los siguientes **paquetes** y sus respectivas *versiones*:
+
+* **nano** *4.8-1ubuntu1*
+* **cvskit** *1.0.2-2*
+* **unzip** *6.0-25ubuntu1*
+* **git** *1:2.25.1-1ubuntu3.1*
+* **curl** *7.68.0-1ubuntu2.5*
+
 **NOTA:** Debe procurarse mantener el directorio [docker-csvkit](/docker-csvkit) solamente con los dos archivos ```Dockerfile``` y ```descargar-datos.sh``` necesarios para crear la imagen al momento de hacer el comando ```biuld```, esto para evitar posibles errores o conflictos.
 
 ## Crear el contenedor
@@ -39,6 +47,8 @@ docker run --rm -it -v <directorio-local>:/root/data --name <nombre-contenedor> 
 ```
 
 Se recomienda ampliamente siempre crear el contenedor con ```--rm``` para que se elmine al terminar y no ir acumulando contenedores cada vez que desee procesar los datos. También se debe correr de manera interactiva con ```-it``` pues se necesitará la terminal para correr el script que manipulará los datos.
+
+## Ejecutar el script de bash
 
 Una vez dentro del contenedor se verá lo siguiente
 
@@ -52,8 +62,15 @@ bash descargar-datos.sh
 
 El script irá informando en la terminal el procesamiento que se vaya haciendo paso por paso, al terminar indicará que los datos resultantes se guardaron en el archivo ```tabaq-obesidad-covid19.csv``` en el directorio ```/root/data```, por lo que ya podrán extraerse del directorio local en donde se montó el volumen. Los datos ya estarán listos para hacer análisis en un lenguaje de programación especializado como R o Python.
 
+El archivo ```tabaq-obesidad-covid19.csv``` tiene la siguiente estructura en sus columnas
+
+![image](/docs/dataset.png)
+
+## Ejemplo
 A continuación, un ejemplo del script corriendo en el contenedor creado con el Dockerfile
 
 ![image](/docs/Docker-csvkit-data.png)
 
 En este caso partícular con un nombre de imagen ```docker-covid-prueba``` y nombre del contenedor ```docker-csvkit``` con el volumen montado en el directorio local ```/Users/hugo/Documents```.
+
+El conjunto de datos 
