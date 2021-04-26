@@ -1,5 +1,5 @@
 # Contenido
-Este repositorio contiene un Dockerfile que crea una imagen de docker basada en Ubuntu 20.04 LTS que a su vez contiene un script bash para descargar y limpiar datos de covid-19 de la Secretaría de Salud Federal de México, el cual estará al crear un contenedor de dicha imagen. Los archivos necesarios para crear la imagen se encuentran en la carpeta [docker-csvkit](/docker-csvkit).
+Este repositorio contiene un Dockerfile que crea una imagen de docker basada en Ubuntu 20.04 LTS que a su vez contiene un script bash para descargar y limpiar datos de covid-19 de la Secretaría de Salud Federal de México, el cual estará al crear un contenedor de dicha imagen. Los archivos necesarios para crear la imagen se encuentran en la carpeta [docker-csvkit](https://github.com/hugojira/docker-csvkit-covid19/tree/main/docker-csvkit).
 
 Los datos que se filtraran se pueden encontrar en la [base de datos abierta de la Dirección General de Epidemiología](https://www.gob.mx/salud/documentos/datos-abiertos-152127).
 
@@ -22,7 +22,7 @@ Las variables que deja el script después de filtrar los datos son (en mayúscul
 
 # Dockerfile y script bash
 ## Crear imagen con el Dockerfile
-Para crear la imagen necesaria se deberá estar en la carpeta [docker-csvkit](/docker-csvkit) como directorio de trabajo y ejecutar en la terminal
+Para crear la imagen necesaria se deberá estar en la carpeta [docker-csvkit](https://github.com/hugojira/docker-csvkit-covid19/tree/main/docker-csvkit) como directorio de trabajo y ejecutar en la terminal
 
 ```bash
 docker build -t <nombre-imagen>:<tag> .
@@ -37,7 +37,7 @@ En este caso, nuestro Dockerile creará la imagen de Ubuntu 20.04 con los siguie
 * **git** *1:2.25.1-1ubuntu3.1*
 * **curl** *7.68.0-1ubuntu2.5*
 
-**NOTA:** Debe procurarse mantener el directorio [docker-csvkit](/docker-csvkit) solamente con los dos archivos ```Dockerfile``` y ```descargar-datos.sh``` necesarios para crear la imagen al momento de hacer el comando ```biuld```, esto para evitar posibles errores o conflictos.
+**NOTA:** Debe procurarse mantener el directorio [docker-csvkit](https://github.com/hugojira/docker-csvkit-covid19/tree/main/docker-csvkit) solamente con los dos archivos ```Dockerfile``` y ```descargar-datos.sh``` necesarios para crear la imagen al momento de hacer el comando ```biuld```, esto para evitar posibles errores o conflictos.
 
 ## Crear el contenedor
 Para poder extraer los datos que se filtrarán con el contenedor, es necesario montar un volumen del directorio ```/root/data``` del contenedor con un directorio que usted desee en su sistema operativo al crear el contenedor. Esto se hace con
@@ -74,3 +74,4 @@ A continuación, un ejemplo del script corriendo en el contenedor creado con el 
 ![image](Docker-csvkit-data.png)
 
 En este caso partícular con un nombre de imagen ```docker-covid-prueba``` y nombre del contenedor ```docker-csvkit``` con el volumen montado en el directorio local ```/Users/hugo/Documents```.
+
