@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
 title: [Limpiando datos con csvkit en Docker]
 description: [Creación de imagen de Docker con Dockerfile y limpieza de datos con un script de bash usando csvkit. Este micro proyecto fue parte de
-la evaluación del curso Herramientas de Productividad para Ciencia de Datos, impartido por la Universidad de Sonora en abril del 2021.]
+la evaluación del curso Herramientas de Productividad para Ciencia de Datos , impartido por la Universidad de Sonora en abril del 2021.]
